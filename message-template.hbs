@@ -1,0 +1,16 @@
+{{#each messages}}
+    <li class="chat-list__item">
+        <img src={{userPhoto}} class="user-logo" alt="">
+        <div class="message">
+            <div class="user-name">
+                {{userName}}
+            </div>
+            <div class="data-text">
+                {{Date}}
+            </div>
+            <div class="message-text">
+                {{message}}
+            </div>
+        </div>
+    </li>
+{{/each}}
