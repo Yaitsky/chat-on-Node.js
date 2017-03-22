@@ -1,0 +1,70 @@
+<div class="wrapper">
+    <div class="col-left">
+        <div class="user-block">
+            <img src="http://www.gamer.ru/system/attached_images/images/000/077/861/normal/buddy1_256.jpg" class="user-logo" id="userPhoto" alt="">
+            <div class="user-name user-name--white">
+                Игорь Яицкий
+            </div>
+        </div>
+
+        <div class="users-block">
+            <h2 class="users-title">
+                Участники <span id="usersCount">(2)</span>
+            </h2>
+            <ul class="users-list">
+                <li class="users-list__item">Игорь Яицкий</li>
+                <li class="users-list__item">Игорь Яицкий</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-right">
+        <ul class="chat-list">
+            <li class="chat-list__item">
+                <img src="http://www.gamer.ru/system/attached_images/images/000/077/861/normal/buddy1_256.jpg" class="user-logo" alt="">
+                <div class="message">
+                    <div class="user-name">
+                        Игорь Яицкий
+                    </div>
+                    <div class="data-text">
+                        22:16
+                    </div>
+                    <div class="message-text">
+                        Привет! Как дела?
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="send-block">
+            <input type="text" class="message-input" id="message" placeholder="Введите сообщение...">
+            <button class="send-button">Отправить</button>
+        </div>
+    </div>
+
+    <div class="modal" id="loginModal">
+        <div class="modal-wrapper">
+            <h2 class="modal-title">
+                Авторизация
+            </h2>
+            <div class="modal-section">
+                <input type="text" class="login-modal__input" placeholder="Ваши имя и фамилия" id="name">
+                <input type="text" class="login-modal__input" placeholder="Ваш никнейм" id="nickName">
+                <button class="modal-button" id="loginButton">Войти</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="dndModal">
+        <div class="modal-wrapper">
+            <h2 class="modal-title">
+                Загрузка фото
+            </h2>
+            <div class="modal-section">
+                <div class="dnd-block">
+                    Ператащите сюда фото
+                </div>
+                <button class="modal-button" id="cancelButton">Отмена</button>
+                <button class="modal-button" id="loadButton">Загрузить</button>
+            </div>
+        </div>
+    </div>
+</div>

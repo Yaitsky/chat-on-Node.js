@@ -1,0 +1,264 @@
+body, html {
+    margin:0;
+    padding: 0;
+    width:100%;
+    height:100%;
+}
+
+.wrapper {
+    width:100%;
+    height:100%;
+    position: relative;
+    display:flex;
+}
+
+.col-left {
+    height:100%;
+    width:20%;
+    background-color: #ff8663;
+}
+
+.col-right {
+    height: 100vh;
+    width:80%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.user-block {
+    margin:15px 0 0 15px;
+    display:flex;
+    align-items: center;
+}
+
+.users-block {
+    margin:30px 0 0 15px;
+}
+
+.users-title {
+    font-family:'Fira Sans';
+    font-size:14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color:#fff;
+}
+
+.users-list {
+    padding:0;
+    margin:0;
+    list-style-type: none;
+}
+
+.users-list__item {
+    margin:5px 0 0 15px;
+    font-family:'Fira Sans';
+    font-size:14px;
+    font-weight: 300;
+    color:#fff;
+}
+
+.chat-list {
+    padding:25px;
+    margin:0;
+    list-style-type: none;
+    max-height: 80%;
+    overflow-y: scroll;
+}
+
+.chat-list__item {
+    width:100%;
+    display:flex;
+    margin-bottom: 15px;
+}
+
+.chat-list__item:last-child {
+    margin-bottom:0;
+}
+
+.user-logo {
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+}
+
+.message {
+    margin-left: 20px;
+}
+
+.user-name {
+    display:inline-block;
+    font-family:'Fira Sans';
+    font-size:15px;
+    font-weight: 600;
+}
+
+.user-name--white {
+    color:#fff;
+    margin-left:15px;
+}
+
+.data-text {
+    display:inline-block;
+    font-family:'Fira Sans';
+    font-size:14px;
+    font-weight: 300;
+    color:#4f4f4f;
+    margin-left:10px;
+}
+
+.message-text {
+    font-family:'Fira Sans';
+    font-size:14px;
+    font-weight: 400;
+    margin-top:5px;
+}
+
+.send-block {
+    padding:25px;
+    border-top:2px solid #ff8663;
+    text-align:center;
+}
+
+.message-input {
+    color:#4f4f4f;
+    font-family:'Fira Sans';
+    font-size:14px;
+    font-weight: 300;
+    height:32px;
+    width:80%;
+    border-radius: 25px;
+    border:1px solid #a9a9a9;
+    padding:0 15px;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.message-input:focus {
+    outline:none;
+    border:1px solid #ff8663;
+}
+
+.send-button {
+    margin-left:15px;
+    text-decoration: none;
+    color: #fff;
+    font-family:'Fira Sans';
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 20px;
+    background-color: #ff8663;
+    border-radius: 25px;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    height: 32px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.send-button:hover {
+    background-color:#ff5e2f;
+}
+
+.send-button:focus {
+    outline:none;
+}
+
+.modal {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.modal-wrapper {
+    position: absolute;
+    width:320px;
+    background-color:#f0f0f0;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px rgba(0,0,0, 0.2);
+}
+
+.modal-title {
+    font-family:'Fira Sans';
+    font-size:16px;
+    font-weight: 500;
+    margin:20px 15px;
+}
+
+.modal-section {
+    background-color: #fff;
+    margin:10px;
+    padding:10px;
+    border-radius: 5px;
+    text-align: right;
+}
+
+.login-modal__input {
+    margin-bottom:10px;
+    color:#4f4f4f;
+    font-family:'Fira Sans';
+    font-size:14px;
+    font-weight: 300;
+    height:32px;
+    width:100%;
+    border-radius: 25px;
+    border:1px solid #a9a9a9;
+    padding:0 15px;
+    box-sizing: border-box;
+}
+
+.login-modal__input:focus {
+    outline:none;
+    border:1px solid #ff8663;
+}
+
+.modal-button {
+    font-family:'Fira Sans';
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 20px;
+    background-color: #ff8663;
+    border-radius: 25px;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    height: 32px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.modal-button:hover {
+    background-color:#ff5e2f;
+}
+
+.dnd-block {
+    width:160px;
+    height:160px;
+    margin:0 auto 10px;
+    line-height: 160px;
+    border:2px dashed #4f4f4f;
+    border-radius: 20%;
+    font-family:'Fira Sans';
+    text-decoration: none;
+    color: #4f4f4f;
+    font-size: 14px;
+    font-weight: bold;
+    padding:20px;
+}
+
+.dnd-block:hover {
+    border-color:#ff8663;
+}
+
+#loginModal, #dndModal {
+    display:none;
+}

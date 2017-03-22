@@ -11,7 +11,7 @@ logger.debug('Script started');
 
 server.listen(port);
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/src'));
 
 io.on('connection', function (socket) {
     var name = "ID" + (socket.id).toString().substr(1,4);

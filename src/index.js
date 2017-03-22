@@ -1,3 +1,5 @@
+require('./styles.css');
+
 var port = 8000;
 var socket = io.connect('http://localhost:' + port);
 
