@@ -17,8 +17,8 @@ module.exports = {
         main: './src/index.js',
     },
     output: {
-        filename: '[chunkhash].js',
-        path: './dist'
+        filename: 'index.js',
+        path: __dirname
     },
     devtool: 'source-map',
     module: {

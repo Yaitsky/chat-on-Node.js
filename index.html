@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>chat</title>
+    <script src="https://use.fontawesome.com/d56d673749.js"></script>
+<link href="./src/styles.css" rel="stylesheet"></head>
+<body>
+
 <div class="wrapper">
     <div class="col-left">
         <div class="user-block">
@@ -57,7 +66,7 @@
 
 <template id="message-template">
     <li class="chat-list__item">
-        <img src="http://www.mistobank.com.ua/mimg/mortgaged_property/12_67_img_slid.png" class="user-logo" alt="">
+        <img src="http://www.mistobank.com.ua/mimg/mortgaged_property/12_67_img_slid.png" class="user-logo user-logo--border" alt="">
         <div class="message">
             <div class="user-name">
                 Игорь Яицкий
@@ -71,3 +80,7 @@
         </div>
     </li>
 </template>
+
+<script type="text/javascript" src="src/socket.io.js"></script></body>
+<script type="text/javascript" src="src/index.js"></script></body>
+</html>

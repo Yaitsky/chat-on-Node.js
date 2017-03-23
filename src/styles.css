@@ -82,6 +82,10 @@ body, html {
     border-radius: 50%;
 }
 
+.user-logo--border {
+    border: 2px solid #f0f0f0;
+}
+
 .message {
     margin-left: 20px;
 }
@@ -259,6 +263,6 @@ body, html {
     border-color:#ff8663;
 }
 
-#loginModal, #dndModal {
+#dndModal {
     display:none;
 }
