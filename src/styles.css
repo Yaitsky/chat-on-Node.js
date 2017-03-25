@@ -82,6 +82,10 @@ body, html {
     border-radius: 50%;
 }
 
+#userPhoto {
+    cursor: pointer;
+}
+
 .user-logo--border {
     border: 2px solid #f0f0f0;
 }
@@ -121,7 +125,7 @@ body, html {
 .send-block {
     padding:25px;
     border-top:2px solid #ff8663;
-    text-align:center;
+    text-align:left;
 }
 
 .message-input {
@@ -130,7 +134,7 @@ body, html {
     font-size:14px;
     font-weight: 300;
     height:32px;
-    width:80%;
+    width:70%;
     border-radius: 25px;
     border:1px solid #a9a9a9;
     padding:0 15px;
@@ -261,6 +265,7 @@ body, html {
 
 .dnd-block:hover {
     border-color:#ff8663;
+    color:#ff8663;
 }
 
 #dndModal {

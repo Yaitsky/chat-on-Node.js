@@ -8,6 +8,7 @@ var loginWindow = document.querySelector('#loginModal');
 var loginButton = document.querySelector('#loginButton');
 
 var userNameBlock = document.querySelector('.user-name--white');
+var userPhoto = document.querySelector('#userPhoto');
 
 var userList = document.querySelector('.users-list');
 var usersCount = document.querySelector('#usersCount');
@@ -16,6 +17,8 @@ var sendButton = document.querySelector('.send-button');
 var messageInput = document.querySelector('#message');
 
 var chatList = document.querySelector('.chat-list');
+
+var loadImageWindow = document.querySelector('#dndModal');
 
 function getTime() {
     var Data = new Date();
@@ -103,17 +106,15 @@ socket.on('messageToUsers', function (messageBlock) {
     chatList.scrollTop = chatList.scrollHeight - chatList.offsetHeight;
 });
 
+socket.on('userDisconnect', function (userName) {
+    var users = userList.children;
+    for (var i = 0; i < users.length; i++) {
+        if (users[i].innerText == userName) {
+            userList.removeChild(users[i]);
+        }
+    }
+});
 
-// socket.on('disconnect', function (name) {
-//     var newItem = document.createElement('li');
-//     newItem.innerText = name + ' disconnected';
-//
-//     chatList.appendChild(newItem);
-// })
-
-
-
-
-
-
-
+userPhoto.addEventListener('click', function (e) {
+    loadImageWindow.style.display = 'block';
+})

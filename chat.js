@@ -17,7 +17,7 @@ var users = [];
 var messages = [];
 
 io.on('connection', function (socket) {
-    var userId = (socket.id).toString().substr(1,4)
+    var userId = (socket.id).toString().substr(1,4);
 
     socket.on('loginUser', function (user) {
         var userData = user;
@@ -49,20 +49,17 @@ io.on('connection', function (socket) {
         io.emit('messageToUsers', messageBlock);
         logger.info(messages);
     });
+
+    socket.on('disconnect', function () {
+        var userName;
+        for (var i=0; i < users.length; i++) {
+            if (userId === users[i].id) {
+                userName = users[i].userName;
+
+                users.splice(i, 1);
+            }
+        }
+        io.emit('userDisconnect', userName);
+    });
 });
 
-// var name = "ID" + (socket.id).toString().substr(1,4);
-//
-// socket.broadcast.emit('newUser', name);
-// socket.emit('userName', name);
-// logger.info(name + ' connected to chat');
-//
-// socket.on('message', function (message) {
-//     logger.info(message);
-//     io.emit('messageToClients', message, name);
-// });
-//
-// socket.on('disconnect', function (disc) {
-//     logger.info(name + ' disc');
-//     io.emit('disconnect', name);
-// })
