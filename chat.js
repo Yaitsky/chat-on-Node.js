@@ -4,6 +4,8 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var log4js = require('log4js');
 var logger = log4js.getLogger();
+var fs = require('fs');
+var SocketIOFileUpload = require('socketio-file-upload');
 
 var port = 8000;
 
@@ -41,13 +43,16 @@ io.on('connection', function (socket) {
         for (var i=0; i < users.length; i++) {
             if (userId === users[i].id) {
                 messageBlock.userName = users[i].userName;
+                messageBlock.userNickname = users[i].userNickname;
+                if (users[i].photoPath != undefined) {
+                    messageBlock.photoPath = users[i].photoPath;
+                }
             }
         }
 
         messages.push(messageBlock);
 
         io.emit('messageToUsers', messageBlock);
-        logger.info(messages);
     });
 
     socket.on('disconnect', function () {
@@ -60,6 +65,29 @@ io.on('connection', function (socket) {
             }
         }
         io.emit('userDisconnect', userName);
+    });
+
+    var uploader = new SocketIOFileUpload();
+    uploader.dir = __dirname + '/images';
+    uploader.listen(socket);
+
+    uploader.on("saved", function (event) {
+        var userNickName,
+            photoPath = 'images/' + event.file.name;
+
+        for (var i=0; i < users.length; i++) {
+            if (userId === users[i].id) {
+                userNickName = users[i].userNickname;
+                users[i].photoPath = 'images/' + event.file.name;
+            }
+        }
+
+        socket.emit('savePhoto', photoPath);
+        io.emit('saveUserPhotoToUsers', userNickName, photoPath);
+    });
+
+    uploader.on("error", function (event) {
+        logger.info('Error!!!', event);
     });
 });
 

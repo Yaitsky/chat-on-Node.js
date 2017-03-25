@@ -18,7 +18,7 @@ module.exports = {
     },
     output: {
         filename: 'index.js',
-        path: __dirname
+        path: __dirname + '/dist'
     },
     devtool: 'source-map',
     module: {

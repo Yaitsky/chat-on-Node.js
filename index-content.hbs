@@ -45,11 +45,15 @@
                 Загрузка фото
             </h2>
             <div class="modal-section">
-                <div class="dnd-block">
-                    Ператащите сюда фото
-                </div>
-                <button class="modal-button" id="cancelButton">Отмена</button>
-                <button class="modal-button" id="loadButton">Загрузить</button>
+                <form method="post">
+                    <div class="dnd-block" id="dropBlock">
+                        <img src="" id="userPhotoImage">
+                        <span>Ператащите сюда фото</span>
+                    </div>
+                    <input type="file" id="filePhoto" name="userPhotoImage">
+                    <button class="modal-button" id="cancelButton">Отмена</button>
+                    <button class="modal-button" id="loadButton">Загрузить</button>
+                </form>
             </div>
         </div>
     </div>
@@ -57,16 +61,16 @@
 
 <template id="message-template">
     <li class="chat-list__item">
-        <img src="http://www.mistobank.com.ua/mimg/mortgaged_property/12_67_img_slid.png" class="user-logo" alt="">
+        <img src="http://www.mistobank.com.ua/mimg/mortgaged_property/12_67_img_slid.png" class="user-logo user-logo--border" alt="">
         <div class="message">
             <div class="user-name">
-                Игорь Яицкий
+
             </div>
             <div class="data-text">
-                22:16
+
             </div>
             <div class="message-text">
-                Привет! Как дела?
+
             </div>
         </div>
     </li>
